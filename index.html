@@ -3,17 +3,27 @@
   <head>
     <title>Awesome Animal Builder - Large Animals</title>
     <meta charset="utf-8">
+    <link href="http://fonts.googleapis.com/css?family=Annie Use Your Telescope&subset=latin" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <figure class="changeme">
+    <figure id="animal">
 
-    <img src="https://thimble.webmaker.org/s/zoo-large/whale-tail.png">
-    <img src="https://thimble.webmaker.org/s/zoo-large/rhino-body.png">
-    <img src="https://thimble.webmaker.org/s/zoo-large/elephant-head.png">
+      <img id="animal-tail" src="https://thimble.webmaker.org/s/zoo-large/unknown.png">
+      <img id="animal-body" src="https://thimble.webmaker.org/s/zoo-large/unknown.png">
+      <img id="animal-head" src="https://thimble.webmaker.org/s/zoo-large/unknown.png">
+      <span class="bubble hidden"  id="animal-say"></span>
 
-      <figcaption><span>Your own awesome animal</span></figcaption>
+      <figcaption><span id="animal-name"></span></figcaption>
+    
     </figure>
+
+    <form id="animal-app">
+      <label for="" >Say: </label> <input type="text" name="say" />
+    </form>
+
+    <button></button>
+    
     <script src="animal.js"></script>
     <script src="main.js"></script>
   </body>
