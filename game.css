@@ -1,0 +1,194 @@
+body {
+	background: url(grass.png);
+  font-family: Cousine;
+}
+
+ul {
+  list-style-type: none;
+  width: 600px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+li {
+	width: 33px;
+	height: 50px;
+	background: url('vx_chara02_c.png');
+  display: inline-block;
+  margin: 50px;
+  position: relative;
+}
+
+li.bubble-hidden span {
+  display: none;
+}
+
+li span {
+  background: #fff;
+  position: absolute;
+  top: -35px;
+  left: 15px;
+  border-left: solid 3px #000;
+  border-right: solid 3px #000;
+  line-height: 1.5em;
+  padding: 3px 3px 0 3px;
+}
+
+li span::before, li span::after {
+  text-align: left;
+  display: block;
+  content: '';
+  height: 3px;
+  border-style: solid;
+  border-width: 0 3px 0 3px;
+  border-image: url(grass.png) 25% repeat;
+  background: #000;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: -3px;
+}
+
+li span::after {
+  content: " \2308";
+  top: auto;
+  bottom: 0;
+  line-height: 7px;
+  font-weight: bold;
+  color: #000;
+}
+
+li {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: steps(2);
+}
+
+li:nth-child(n) {
+	background-position: -193px 0;
+  -webkit-animation-name: cr1;
+}
+
+li:nth-child(2n) {
+  background-position: 0 -192px;
+  -webkit-animation-name: cr2;
+}
+
+li:nth-child(3n) {
+  background-position: -193px -192px;
+  -webkit-animation-name: cr3;
+}
+
+li:nth-child(4n) {
+  background-position: 0 0;
+  -webkit-animation-name: cr4;
+}
+
+li:nth-child(5n) {
+  background-position: -97px 0;
+  -webkit-animation-name: cr5;
+}
+
+li:nth-child(6n) {
+  background-position: -290px 0;
+  -webkit-animation-name: cr6;
+}
+
+li:nth-child(7n) {
+  background-position: -97px -192px;
+  -webkit-animation-name: cr7;
+}
+
+li:nth-child(8n) {
+  background-position: -290px -192px;
+  -webkit-animation-name: cr8;
+}
+
+li.stop-animation {
+  -webkit-animation: none;
+}
+
+li.stop-animation span {
+  background: #ccc;
+}
+
+@-webkit-keyframes cr1 {  
+  from {
+    background-position: -193px 0;
+  }
+
+  to {
+    background-position: -255px 0;
+  }
+}
+
+@-webkit-keyframes cr2 {  
+  from {
+    background-position: 0 -192px;
+  }
+
+  to {
+    background-position: -125px -192px;
+  }
+}
+
+@-webkit-keyframes cr3 {  
+  from {
+    background-position: -193px -192px;
+  }
+
+  to {
+    background-position: -255px -192px;
+  }
+}
+
+@-webkit-keyframes cr4 {  
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: -66px 0;
+  }
+}
+
+@-webkit-keyframes cr5 {  
+  from {
+    background-position: -97px 0;
+  }
+
+  to {
+    background-position: -225px 0;
+  }
+}
+
+@-webkit-keyframes cr6 {  
+  from {
+    background-position: -290px 0;
+  }
+
+  to {
+    background-position: -416px 0;
+  }
+}
+
+@-webkit-keyframes cr7 {  
+  from {
+    background-position: -97px -192px;
+  }
+
+  to {
+    background-position: -225px -192px;
+  }
+}
+
+@-webkit-keyframes cr8 {  
+  from {
+    background-position: -290px -192px;
+  }
+
+  to {
+    background-position: -416px -192px;
+  }
+}
