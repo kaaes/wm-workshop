@@ -5,15 +5,15 @@ On how to write the code - use meaningful names
 How to get from HTML to JS (how to select elements in the console)
 Quick look a the HTMLElements - properties and methods (what happens if we change class, innerHTML, style)
 How to manipulate existing HTML elements - changing styles manually vs. changing the class and letting css do the rest
-<excercise>
+<excercise> - 
 How to manipulate HTML - adding new elements, removing existing ones (destroy method in frameworks)
 appendChild, insertBefore
-<ecxcercise> - jajko, kaczka, królik ,koza
+<ecxcercise> - jajko, kaczka, królik, koza
 Events - what are they, what types of events we have
 <excercise>
 Events - adding, removing, getting the reference element
-<excercise>
+<excercise> - pixel game (najpierw na zwykłej liście?)
 Event delegation, event target, event current target
-<excercise>
+<excercise> - pixel game
 Object excercise - properties and methods
-<excercise>
+<excercise> - animal
