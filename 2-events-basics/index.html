@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+ <html>
+  <head>
+    <title>Just an element with a click</title>
+    <meta charset="utf-8">
+    <link href="http://fonts.googleapis.com/css?family=Annie Use Your Telescope&subset=latin" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <ul id="list" class="some-element transition">
+      <li id="item-1">
+        <h3>Yummy sample of <a href="http://cupcakeipsum.com/">cupcake ipsum</a></h3>
+        <div>Oat cake cotton candy pie tart. Halvah cake candy. Dessert croissant soufflé muffin gingerbread caramels chocolate cake wafer dessert. Jelly-o faworki bonbon applicake donut.</div>
+      </li>
+
+      <li>
+        <h3>Yuck, sugar! I'd rather have some <a href="http://baconipsum.com/">bacon ipsum</a>, please!</h3>
+        <div>Bacon ipsum dolor sit amet frankfurter shank boudin capicola, venison leberkas ball tip corned beef drumstick andouille tri-tip filet mignon kielbasa. Leberkas ham hock beef, cow pig ball tip jowl chicken ground round venison short loin prosciutto pork kielbasa.</div>
+      </li>
+
+      <li>
+        <h3>Eat! Brainz! <a href="http://www.zombieipsum.com/">Zooombie ipsum</a></h3>
+        <div>Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium.</div>
+      </li>
+
+      <li>
+        <h3><a href="http://lorizzle.nl/">Gangsta ipsum</a> for life, dawg!</h3>
+        <div>Lorizzle ipsum own yo' shizzle my nizzle crocodizzle amizzle, da bomb adipiscing da bomb. Izzle mofo velizzle, dope volutpizzle, suscipit daahng dawg, gravida vel, shizznit. Pellentesque egizzle stuff. Sed erizzle. Boom shackalack izzle dolor dapibizzle turpizzle tempus fizzle.</div>
+      </li>
+    </ul>
+    <script>
+      // dodanie tej klasy po załadowaniu się storny powoduje
+      // że show/hide będzie działać tylko tam gdzie JS jest dostępny
+      var list = document.getElementById('list');
+      list.classList.add('transition');
+
+      /*var item = document.getElementById('item-1');
+      item.addEventListener('click', function(evt) {
+        this.classList.toggle('slide');
+      }, true);*/
+
+      var elements = list.getElementsByTagName('li');
+      for (var i = 0, l = elements.length; i < l; i++) {
+        elements[i].addEventListener('click', toggleSlide);
+      }
+
+      function toggleSlide(evt) {
+        this.classList.toggle('slide');
+      }
+    </script>
+  </body>
+</html>
+<!--
+  Dodanie event listenera do elementu
+  addEventListener - jakie parametry, co oznaczają
+  wewnątrz callbacka - czym jest evt, co istotnego w nim siedzi
+  przykład clicka - parametry myszki
+  przykład z klawiatury - jaka litera została wpisana
+-->

@@ -1,0 +1,14 @@
+Na warsztatach dowiecie się: 
+- czym jest JavaScript i czy można go znaleźć w lodówce,
+- gdzie dodać go do strony i dlaczego na sam dół,
+- że JavaScript bez jQuery nie boli, 
+- że w przeglądarce można kodować, a breakpoint to wasz najlepszy przyjaciel,
+- czym <div> różni się od HTMLDivElement, czyli jak przejść od HTML do JS,
+- jak JavaScript do spółki z CSSem każe HTMLowi fikać koziołki, czyli jak dynamicznie modyfikować wygląd Twojej strony,
+- czemu niektóry strony to tylko <body></body>, czyli jak tworzyć elementy HTML,
+- jak animować elementy strony i czy do tego w ogóle potrzebny jest ten JavaScript,
+- czym są eventy, czemu jest ich aż tyle i co im siedzi w brzuchu,
+- jak dobrze wychowywać swoje eventy, czyli jak i po co stosować delegację.
+
+- temat bonusowy: obiekty w JavaScripcie, czym są, jak je tworzyć i jak ich używać
+(to, czy to zrobię szczerze mówiąc zależy od tego jak mi czasowo zejdzie z resztą)

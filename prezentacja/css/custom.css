@@ -1,0 +1,243 @@
+@import url(http://fonts.googleapis.com/css?family=Chelsea%20Market&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Oregano&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Wellfleet&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Princess%20Sofia&subset=latin);
+
+.reveal pre {
+  width: 100%;
+}
+
+.reveal small {
+  font-size: 14px;
+}
+
+.reveal h1 {
+  font-size: 3em;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  font-family: 'Wellfleet';
+  letter-spacing: normal;
+  font-weight: normal;
+}
+
+.reveal section img {
+  padding: 5px;
+  background: #fff;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.reveal section img.seamless {
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+
+#intro h2 {
+  color: #eee;
+  text-shadow: 1px 1px 0 #000, 0 0 10px rgba(0,0,0,.9);
+}
+
+#intro .kontakt h3 {
+  color: #eee;
+  background: rgba(0,0,0,.5);
+  line-height: 1.5em;
+  padding: .3em;
+  text-shadow: 1px 1px 0 #000, 0 0 10px rgba(0,0,0,.9);
+}
+
+#intro figure {
+  position: relative;
+  display: inline-block;
+  color: #eee;
+  text-shadow: 1px 1px 0 #000, 0 0 10px rgba(0,0,0,.9);
+}
+
+#intro figcaption {
+  /*font-family: 'Princess Sofia';*/
+  font-family: 'Chelsea Market';
+  position: absolute;
+  top: -30px;
+  left: -250px;
+  font-size: 56px;
+  padding-left: 5px;
+  display: inline-block;
+  width: auto;
+}
+
+#intro figcaption::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: url('/img/arrow-1.png') no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: -110px;
+  top: -30px;
+}
+
+#kasia img, #szto img {
+  -webkit-transform: rotate(-1deg);
+}
+
+#kasia figcaption {
+  left: auto;
+  right: -230px;
+  top: 100px;
+}
+
+#kasia figcaption::after {
+ -webkit-transform: rotate(135deg); 
+ top: 30px;
+ left: -60px;
+}
+
+#spotify {
+  margin-top: 80px;
+}
+
+#spotify img {
+  width: 300px;
+}
+
+#spotify figcaption {
+  left: auto;
+  right: -200px;;
+}
+
+#spotify figcaption::after {
+  background-image: url('/img/arrow.png');
+  -webkit-transform: rotateY(180deg);
+  left: -110px;
+}
+
+#szto {
+  width: 550px;
+  margin-top: 40px;
+}
+
+#szto figcaption {
+  right: -40px;
+  top: -40px;
+  left: auto;
+}
+
+#szto figcaption::after {
+  top: 20px;
+  left: auto;
+  right: -60px;
+  -webkit-transform: rotate(90deg);
+}
+
+#js {
+  margin-top: 50px;
+}
+
+#js img {
+  width: 200px;
+}
+
+#js figcaption {
+  top: auto;
+  bottom: -80px;
+  left: -30px;
+  right: auto;
+}
+
+#js figcaption::after, #kontakt figcaption::after {
+  -webkit-transform: rotate(-90deg);
+  left: -60px;
+  top: -65px;
+}
+
+#kontakt figcaption {
+  top: auto;
+  bottom: -80px;
+  left: -30px;
+  right: auto;
+}
+
+.fridge body {
+  background: url('/img/lodowka.jpeg');
+  background-size: cover;
+}
+
+.js .images {
+  position: relative;
+  height: 400px;
+}
+
+.js .images img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.js .images img:nth-child(1) { -webkit-transform: rotate(-1deg); }
+.js .images img:nth-child(2) { -webkit-transform: rotate(3deg); }
+.js .images img:nth-child(3) { -webkit-transform: rotate(-5deg); }
+.js .images img:nth-child(4) { -webkit-transform: rotate(-3deg); }
+.js .images img:nth-child(5) { -webkit-transform: rotate(5deg); }
+.js .images img:nth-child(6) { -webkit-transform: rotate(1deg); }
+
+.vanilla body {
+  background: url('/img/vanilla1.jpeg');
+  background-size: cover;
+}
+
+.tools body {
+  background: url('/img/tools.jpeg');
+  background-size: cover;
+}
+
+.blueprint body {
+  background: url('/img/blueprint.jpeg');
+  background-size: cover;
+}
+
+.lego body {
+  background: url('/img/lego.jpeg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.animation body {
+  background: url('/img/animation.jpeg');
+  background-size: cover;
+}
+
+.eventy body {
+  background: url('/img/eventy.jpeg');
+  background-size: cover;
+}
+
+.intro body {
+  background: url('/img/wood.jpeg');
+  background-size: cover;
+}
+
+.hello body {
+  background: url('/img/sky.jpeg');
+  background-size: cover;
+}
+
+.fridge h2,
+.vanilla h2,
+.tools h2,
+.blueprint h2,
+.lego h2,
+.animation h2,
+.eventy h2,
+.hello h1 {
+  background: rgba(255,255,255,.8);
+  padding: .2em;
+  text-shadow: 1px 1px 0 #fff, 0 0 5px #fff;
+}

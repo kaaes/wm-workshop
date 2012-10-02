@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+ <html>
+  <head>
+    <title>Dusza Kościeja</title>
+    <meta charset="utf-8">
+    <link href="http://fonts.googleapis.com/css?family=Annie Use Your Telescope&subset=latin" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- <div id="rabbit">
+      <div id="duck">
+        <div id="egg">
+          <div id="needle">
+            <div id="soul"></div>
+          </div>
+        </div>
+      </div>
+    </div>  -->
+    <script>
+      var soul = document.createElement('div');
+      var needle = document.createElement('div');
+      var egg = document.createElement('div');
+      
+      soul.id = 'soul';
+      needle.id = 'needle';
+      egg.id = 'egg';
+
+      needle.appendChild(soul);
+      egg.appendChild(needle);      
+      document.body.appendChild(egg);
+    </script>
+  </body>
+</html>
+<!--
+  początek - zacząć od historii Koscieja, potem pokazac gotową stronę ze wszystkimi elementami
+  zacząć od wytłumaczenia jak stworzyć pojedynczy element, jak wsadzić jeden w drugi
+  (na kaczce i kroliku?)
+  zadanie - dokończyć ciąg
+  potem w drugą stronę - jak wyciągnąć duszę na wierzch i usunąć element
+  usuwanie z DOM vs usuwanie całkowite removeChild vs = null
+-->
