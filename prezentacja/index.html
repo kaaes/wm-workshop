@@ -44,26 +44,26 @@
 					<h2>Hallå!</h2>
 					<section>
 						<figure id="kasia">
-							<img class="kasia" src="/img/kasia.jpeg" alt="Kasia Drzyzga" />
+							<img class="kasia" src="img/kasia.jpeg" alt="Kasia Drzyzga" />
 							<figcaption>Kasia</figcaption>
 						</figure>
 					</section>
 					<section>
 						<figure id="spotify">
-							<img class="seamless" src="/img/spotify.png" alt="Spotify" />
+							<img class="seamless" src="img/spotify.png" alt="Spotify" />
 							<figcaption>Spotify</figcaption>
 						</figure>
 					</section>
 					<section>
 						<figure id="szto">
-							<img src="/img/szto.jpeg" alt="Sztokholm" />
+							<img src="img/szto.jpeg" alt="Sztokholm" />
 							<figcaption>Sztokholm&hearts;</figcaption>
 						</figure>
 					</section>
 					<section>
 						<figure id="js">
-							<img class="seamless" src="/img/JavaScript-logo.png" alt="JS" />
-							<img class="seamless" src="/img/HTML5_Badge_256.png" alt="HTML5" />
+							<img class="seamless" src="img/JavaScript-logo.png" alt="JS" />
+							<img class="seamless" src="img/HTML5_Badge_256.png" alt="HTML5" />
 							<figcaption>Open Web!</figcaption>
 						</figure>
 					</section>
@@ -85,11 +85,11 @@
 				<section>
 					<h2>Straszny!</h2>
 					<section>
-						<img src="/img/jez1a.jpg" alt="jeż" />
+						<img src="img/jez1a.jpg" alt="jeż" />
 						<p><small>Źródło: http://jezyniec.blox.pl/2012/09/TYDZIEN-JEZA-USZATEGO-JEZ-PRAWIE-PO-NAPRAWIE.html</small></p>
 					</section>
 					<section>
-						<img src="/img/jez2.jpeg" alt="jeż" />
+						<img src="img/jez2.jpeg" alt="jeż" />
 						<p><small>Źródło: http://fotoforum.gazeta.pl/zdjecie/3240023</small></p>
 					</section>
 				</section>
@@ -104,13 +104,13 @@
 				<section data-state="js">		
 					<h2>&hellip;ale</h2>	
 					<div class="images">		
-						<img src="/img/js/maps.png" />
-						<img class="fragment" class="fragment" src="/img/js/angry.png" />
-						<img class="fragment" src="/img/js/spotify-screen.png" />
-						<img class="fragment" src="/img/js/tv.jpeg" />
-						<img class="fragment" src="/img/js/ffos.jpeg" />
-						<img class="fragment" src="/img/js/ffos1.png" />
-						<img class="fragment" src="/img/js/soon.jpeg" />
+						<img src="img/js/maps.png" />
+						<img class="fragment" class="fragment" src="img/js/angry.png" />
+						<img class="fragment" src="img/js/spotify-screen.png" />
+						<img class="fragment" src="img/js/tv.jpeg" />
+						<img class="fragment" src="img/js/ffos.jpeg" />
+						<img class="fragment" src="img/js/ffos1.png" />
+						<img class="fragment" src="img/js/soon.jpeg" />
 					</div>
 					<p><small>http://firefoxos.info/</small></p>
 				</section>
@@ -148,6 +148,7 @@ document.querySelector('#id');
 document.querySelector('.class');
 document.querySelectorAll('#container li');
 document.querySelectorAll("#large:nth-child(even)");</code></pre>
+						<a href="http://jsperf.com/vanilla-js-vs-jquery-basic-selectors">Vanilla JS vs jQuery basic selectors performance</a>
 					</section>
 
 					<section>
@@ -216,7 +217,7 @@ document.addEventListener('click', function(e) {
 					<h2>Frameworki czy vanilla JavaScript?</h2>
 					<div class="fragment">
 						<h2>to zależy!</h2>
-						<img class="seamless" src="/img/trollface.png" alt="trololo" />
+						<img class="seamless" src="img/trollface.png" alt="trololo" />
 					</div>
 				</section>
 
@@ -231,39 +232,40 @@ document.addEventListener('click', function(e) {
 					<h2>Konsola</h2>
 					<pre><code>$();
 $$();
-cosole.log(); / console.dir();
-cosole.log(); / console.warn(); / console.error();
+console.log(); / console.dir();
+console.log(); / console.warn(); / console.error();
 inspect();</code></pre>
+					<div class="fragment">
+					<h3>Zadanie</h3>
+					<pre><code>Za pomocą konsoli:
+  - policz pole koła o promieniu 5 (&pi;r<sup>2</sup>)
+  - policz pierwiastek kwadratowy z 2<sup>5</sup>
+  - zamień ciąg 'do re mi fa so la si do' na 're mi za'</code></pre>
+					<a href="">specyfikacja obiektu Math</a><br />
+					<a href="">specyfikacja obiektu String</a>
 					<script>
 						console.log('console.log(Hej!)');
 						console.warn('console.warn(Hej!)');
 						console.error('console.error(Hej!)');
 					</script>
+				</div>
 				</section>
 
 				<section>
 					<h2>Sources</h2>
-					<pre><code>Przygotować coś</code></pre>
+					<div class="fragment">
+					<h3>Zadanie</h3>
+  				<pre><code>Popraw błędy, w skrypcie '/0-find-errors/index.html'</code></pre>
+  				<a href="/0-find-errors/index.html">/0-find-errors/index.html</a>
 					<script>
 						console.log('console.log(Hej!)');
 						console.warn('console.warn(Hej!)');
 						console.error('console.error(Hej!)');
 					</script>
+				</div>
 				</section>
 
-				<section>
-					<pre><code>Zadanie 1:
-Za pomocą konsoli:
-  - policz pole koła o promieniu 5 (&pi;r<sup>2</sup>)
-  - policz pierwiastek kwadratowy z 2<sup>5</sup>
-  - zamień ciąg 'do re mi fa so la si do' na 're mi za'</code></pre>
-  				<pre><code>Zadanie 2:
-Popraw błędy, w skrypcie (literówka w nazwie zmiennej, niedomknięty nawias, brak apostrofu)
-Za pomocą konsoli znajdź:
-  - wszystkie elementy &lt;p&gt;
-  - wszystkie elementy posiadające klasę 'g'
-  - element o id 'main'
-  - wartość atrybutu 'innerHTML' elementu o id 'main'</code></pre>
+
  				<!-- 					Jak wołać metody i wlasnosci w konsoli - podejrzeć obiekt, jego metody i własnoście
 					demonstracja policzyć za pomocą konsoli i obiektu math obwód koła o promieniu 5 (2 * Math.PI * r)
 					zadanie policzyć pole tego samego koła (Math.PI * Math.pow(r, 2)) 
@@ -272,7 +274,6 @@ Za pomocą konsoli znajdź:
 					jak używać konsoli i zakładki sources, jak wstawiać breakpointy, jak podglądać wartości zmiennych
 					(obejrzeć film z trickami w konsoli)
 					autouzupełnianie - wpisać kilka liter alfabetu, ile możliwości oferuje język-->
-				</section>
 
 				<section data-state="blueprint">
 					<h2>DOM</h2>
@@ -281,7 +282,157 @@ Za pomocą konsoli znajdź:
 				</section>
 
 				<section>
-					<a href="/1-manipulate-element/">Ćwiczymy!</a>
+					<h2>Document Object Model</h2>
+					<img src="img/dom.png" alt="DOM" />
+				</section>
+
+				<section>
+					<h2>HTML &rarr; DOM</h2>
+					<!-- <div id="info" class="box"><p>Some info</p></div> -->
+					<pre><code>&lt;div id="info" class="box"&gt;&lt;p&gt;Some info&lt;/p&gt;&lt;/div&gt;</code></pre>
+					<p>&darr;</p>
+					<pre><code>var info = document.getElementById('info');</code></pre>
+					<p>&darr;</p>
+					<pre><code class="cs">[HTMLDivElement]
+
+info.id;                           // "info"
+info.className;                    // "box"
+info.innerHTML;                    // "&lt;p&gt;Some info&lt;/p&gt;"
+info.getElementsByTagName('p')[0]; // [HTMLParagraphElement]</code></pre>
+				</section>
+
+				<section>
+					<h2>Jak dostać się do elementów DOM</h2>
+					<section>
+
+						<pre><code class="javascript">document.querySelector('ul li.active:nth-child(2n)');
+
+document.querySelectorAll('ul li.active')[0];</code></pre>
+
+						<pre><code class="javascript">element.querySelector('#myEl');
+
+element.querySelectorAll('ul li.active')[0];</code></pre>
+						<pre><code class="javascript">function $(selector) {
+  var elements = document.querySelectorAll(selector);
+  return elements.length <= 1 ? elements[0] : elements;
+}</code></pre>
+					</section>
+				
+					<section>
+
+						<pre><code lang="cs">document.getElementById('myEl');
+
+document.getElementsByClassName('box')[0];
+
+document.getElementsByTagName('a')[0];</code></pre>
+
+						<pre><code lang="javascript">element.getElementById('myEl');
+
+element.getElementsByClassName('box')[0];
+
+element.getElementsByTagName('a')[0];</code></pre>
+					</section>
+
+					<section>
+						<pre><code>element.parentNode;
+element.childNodes;
+element.firstChild;
+element.lastChild;
+element.previousSibling;
+element.nextSibling;</code></pre>
+						<pre><code>document.body.childNodes[0].childNodes[1]...</code></pre>
+					</section>
+				</section>
+
+
+
+				<section>
+					<h2><code>HTMLElement</code></h2>
+					<section>
+						<pre><code>&lt;div id="myBox" class="box info">&lt;p>Some info&lt;/p>&lt;/div></code></pre>
+						<p>&darr;</p>
+						<pre><code>var myBox = document.getElementById('myBox');</code></pre>
+						<p>&darr;</p>
+						<pre><code>[HTMLDivElement]
+myBox.id                    // "myBox"
+
+myBox.classList[0]          // "box"
+myBox.classList[1]          // "item"
+myBox.className             // "box item"
+
+myBox.innerHTML             // "&lt;p&gt;Some info&lt;/p&gt;"
+
+myBox.style.backgroundColor // "red"
+myBox.style.fontFamily      // "Arial"</code></pre>
+					</section>
+<!-- wlasnosci mozna odczytywac i ustawiac (pokazac w konsoli) -->
+<!-- ta wersja ćwiczenia powinna mieć style ustawione lokalnie -->
+				</section>
+
+				<section>
+					<h2>el.style and el.style.cssText</h2>
+					<pre><code class="cs">el.style.backgroundColor = "red";
+el.style.border = "solid 1px blue";
+
+el.style.cssText // "background-color: red; border: 1px solid blue;"
+
+el.style.cssText = "background-color: blue; border: 5px dotted red;"
+el.style.backgroundColor // "blue";
+el.style.border          // "dotted 5px red";
+</code></pre>
+				</section>
+
+				<section>
+					<h2>classList vs className</h2>
+					<pre><code class="cs">className: "box item"
+
+classList: [DOMTokenList] {
+  0: "box",
+  1: "item",
+  length: 2,
+}</code></pre>
+
+<pre><code class="cs">el.className = "box info";
+el.classList.add('small');     // "box info small"
+el.classList.remove('info');   // "box small"
+el.classList.toggle('box');    // "small"
+el.classList.toggle('box');    // "box small"
+el.classList.contains('info'); // false</code></pre>
+				</section>
+
+				<section data-state="script-bottom">
+					<!-- <ul class="fragment">
+						<li>HTML jest szybciej widoczny</li>
+						<li>Skrypt nie może działać bez obiektów DOM</li>
+					</ul> -->
+					<h2>No więc dlaczego &lt;script&gt; jest zawsze<span title="(prawie)">*</span> na dole?</h2>
+				</section>
+
+				<section>
+					<h2>Ćwiczymy</h2>
+  				<!-- <pre><code class="text">Zmodyfikuj zielony prostokąt:
+- zrób z niego niebieski kwadrat z białym tekstem
+- zmień treść w prostokącie na jakąś inną
+- spraw, żeby prostokąt stanął na głowie
+- spraw by prostokąt zniknął z ekranu i pojawił się na nim ponownie
+- zrób z nim coś zupełnie innego :)</code></pre> -->
+
+  				<a href="/1-manipulate-element/">/1-manipulate-element/index.html</a>
+  				<!--
+  początek - niewidoczny element
+  spowodować, żeby stał się widoczny przez ustawianie stylów z konsoli
+  potem dodać klasę która zdefiniuje cały wygląd
+  potem zmiana wyglądu za pomocą JSa vs zmiana wyglądu przez zmianę klasy
+  potem dodanie klasy, która doda tranzycje i wytłumaczenie animacji
+  (przez przełączanie klas) wytłumaczyć add, remove i toggle
+  pokazanie jak płynnie zmienić wygląd elementu
+  zadanie - wykorzystać istniejące klasy żeby zwinąc/rozwinąć element
+  wsunąć wysunąć element ze strony, pokazać go i zniknąć
+
+  na koniec, dodać event na click
+
+  krok następny - tworzenie nowych elementów
+-->
 					<!--To JS, a to HTML, pomiędzy nimi siedzi DOM, obiektowa reprezentacja HTMLa
 					HTML jest parsowany i każdy z tagów tworzy element drzewa
 					Obiekt jest dużo ciekawszy niż zwykły tag - ma własności i metody którymi można nimi manipulować 
@@ -319,6 +470,50 @@ Za pomocą konsoli znajdź:
 					<p><small>Źródło: http://www.flickr.com/photos/owly/1856923676/</small></p>
 				</section>
 
+				<section class="create-example">
+					<h2>Jak tworzyć obiekty HTML</h2>
+					<pre><code>var container = document.createElement('section');
+container.classList.add('info');
+
+var content = document.createTextNode('Hi there!');
+
+container.appendChild(content);
+document.body.appendChild(container);</code></pre>
+
+					<pre><code>var header = document.createElement('h2');
+header.innerHTML = 'I am a header';
+
+container.insertBefore(header, content)</code></pre>
+				<a href="/2-create-basics/index.html">/2-create-basics/index.html</a>
+				</section>
+
+				<section>
+					<h2><code>documentFragment</code></h2>
+					<pre><code class="javascript">var list = document.querySelector('ul');
+
+var fragment = document.createDocumentFragment();
+
+var item;
+
+for (var i = 0; i < 5; i++) {
+  item = document.createElement('li');
+  item.innerText = content[i];
+  fragment.appendChild(item);
+}
+
+list.appendChild(fragment);</code></pre>
+				</section>
+
+				<section>
+					<h2></h2>
+				</section>
+
+				<section>
+					<h2>W którą stronę?</h2>
+					<img class="seamless fragment" src="img/arr-up.png" alt="z dołu do góry"/>
+					<!-- góra dół czy dół góra repaint i reflow -->
+				</section>
+
 				<section>
 					<a href="/3-create-elements/">Ćwiczymy!</a>
 					<!--Mając dostęp do elementów DOM możemy nimi manipulować
@@ -337,9 +532,55 @@ Za pomocą konsoli znajdź:
 					<p><small>Źródło: http://www.flickr.com/photos/ujh/4307773392/</small></p>
 				</section>
 
+				<section>
+					<h2>Ile JavaScriptu w animacjach?</h2>
+				</section>
+
 				<section data-state="eventy">
 					<h2>Eventy</h2>
 					<p><small>Źródło: http://www.flickr.com/photos/kevindean/4467694685/</small></p>
+				</section>
+
+				<section>
+					<!-- jak dodawać event, jak zbudowany jest callback, jak dobrać się do elementu, który event odpalił
+					najważniejsze eventy click, dblclick, keydown, keypress, keyup, focus, blur
+					inne rodzaje eventow, touch, deviceorientation, scroll, drag
+					monitorEvents w konsoli
+					preventDefault dla linków i dla formularzy
+					delegacja eventów
+					 -->
+					<h2>Podstawy</h2>
+					<pre><code>element.addEventListener(eventName, handler, useCapture);</code></pre>
+
+					<pre><code>var a = document.querySelector('a');
+a.addEventListener('click', doStuff, false);</code></pre>
+					
+					<pre><code>function doStuff(evt) {
+  /* evt to obiekt, który zawiera wszystkie
+     informacje o evencie */
+}</code></pre>
+				</section>
+
+				<section>			
+					<h3><code>MouseEvents</code></h3>
+					<pre><code>click, dblclick</code></pre>
+
+					<h3><code>KeyboardEvents</code></h3>
+					<pre><code>keydown, keypress, keyup</code></pre>
+
+					<h3><code>FocusEvents</code></h3>
+					<pre><code>focus, blur</code></pre>
+
+					<h3>Form related events</h3>
+					<pre><code>change, input, submit, reset</code></pre>
+				</section>
+
+				<section>
+					<h2>Pokaż kotku, co masz w środku</h2>
+				</section>
+
+				<section>
+					<h2>Delegacja eventów</h2>
 				</section>
 				
 			</div>

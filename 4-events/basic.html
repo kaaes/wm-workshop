@@ -1,0 +1,20 @@
+ <!DOCTYPE html>
+ <html>
+  <head>
+    <title>Events basic</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="log"></div>
+    <script>
+      var log = document.getElementById('log'),
+          i = '', 
+          out = [];
+      for (i in window) {
+        if ( /^on/.test(i)) { out[out.length] = i; }
+      }
+      log.innerHTML = out.join(', ');
+    </script>
+  </body>
+</html>

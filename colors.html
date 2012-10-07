@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+    <title>Fixmefixme</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script>
+    function processData(data) {
+      // taking care of data
+    }
+
+    function handler() {
+      if(this.readyState == this.DONE) {
+        if(this.status == 200 &&
+          this.responseXML != null &&
+          this.responseXML.getElementById('test').textContent) {
+          // success!
+          processData(this.responseXML.getElementById('test').textContent);
+          return;
+        }
+        // something went wrong
+        processData(null);
+      }
+    }
+
+    var client = new XMLHttpRequest();
+    client.onreadystatechange = handler;
+    client.open("GET", "rgb.txt");
+    client.send();
+</script>
+</body>
+</html>
