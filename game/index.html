@@ -1,0 +1,68 @@
+ <!DOCTYPE html>
+ <html>
+  <head>
+    <title>Some people</title>
+    <meta charset="utf-8">
+    <link href="http://fonts.googleapis.com/css?family=Cousine&subset=latin" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="game.css">
+  </head>
+  <body>
+    <div id="gameboard">
+      <ul id="players">
+<!--         <li><span>Annie</span></li>
+        <li><span>Fiona</span></li> -->
+      </ul>
+    </div>
+    <script src="game.js"></script>
+    <script>
+      (function() {
+        
+        var game = new Game(document.querySelector('#gameboard'));
+        
+        game.init();
+
+        document.body.addEventListener('keydown', movePlayer, false);
+
+        function movePlayer(ev) {
+          var player = game.activePlayer,
+              x = player.x,
+              y = player.y,
+              sx = x,
+              sy = y,
+              movement = true;
+          
+          switch (ev.which) {
+            case 32: // space
+              break;
+            
+            case 39: // right
+              sx = x + 1;
+              break;
+            
+            case 37: // left
+              sx = x - 1;
+              break;
+            
+            case 38: // up
+              sy = y - 1;
+              break;
+            
+            case 40: // down
+              sy = y + 1;
+              break;
+            
+            default:
+            movement = false;
+              break;
+          }
+          
+          if (movement) {
+            game.movePlayer(sx, sy);
+            ev.preventDefault();
+          }
+          
+        }
+      })();
+    </script>
+  </body>
+</html>
