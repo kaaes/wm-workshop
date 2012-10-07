@@ -22,6 +22,11 @@
   letter-spacing: normal;
   font-weight: normal;
   text-transform: none;
+  margin: 0 0 .3em 0;
+}
+
+.reveal .more-spacing {
+  margin: .5em 0;
 }
 
 .reveal section img {
@@ -36,12 +41,20 @@
   border: none;
 }
 
-#intro h2 {
+.reveal .important-events code {
+  color: #777;
+}
+
+.reveal .important-events span {
+  color: #fff;
+}
+
+.intro h2 {
   color: #eee;
   text-shadow: 1px 1px 0 #000, 0 0 10px rgba(0,0,0,.9);
 }
 
-#intro .kontakt h3 {
+.intro .kontakt h3 {
   color: #eee;
   background: rgba(0,0,0,.5);
   line-height: 1.5em;
@@ -49,14 +62,14 @@
   text-shadow: 1px 1px 0 #000, 0 0 10px rgba(0,0,0,.9);
 }
 
-#intro figure {
+.intro figure {
   position: relative;
   display: inline-block;
   color: #eee;
   text-shadow: 1px 1px 0 #000, 0 0 10px rgba(0,0,0,.9);
 }
 
-#intro figcaption {
+.intro figcaption {
   /*font-family: 'Princess Sofia';*/
   font-family: 'Chelsea Market';
   position: absolute;
@@ -68,7 +81,7 @@
   width: auto;
 }
 
-#intro figcaption::after {
+.intro figcaption::after {
   content: '';
   display: block;
   width: 100px;
@@ -148,13 +161,13 @@
   right: auto;
 }
 
-#js figcaption::after, #kontakt figcaption::after {
+#js figcaption::after, #kontakt figcaption::after, #kontakt-2 figcaption::after {
   -webkit-transform: rotate(-90deg);
   left: -60px;
   top: -65px;
 }
 
-#kontakt figcaption {
+#kontakt figcaption, #kontakt-2 figcaption {
   top: auto;
   bottom: -80px;
   left: -30px;
@@ -232,7 +245,17 @@
 
 .anatomy body {
   background: url('../img/anatomy.jpeg');
-  /*background-position: center center;*/
+  background-size: cover;
+}
+
+.playtime body {
+  background: url('../img/playtime.jpeg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.bling body {
+  background: url('../img/bling.jpeg');
   background-size: cover;
 }
 
@@ -244,7 +267,9 @@
 .animation h2,
 .eventy h2,
 .hello h1,
-.anatomy h2 {
+.anatomy h2,
+.playtime h2,
+.bling h2 {
   background: rgba(255,255,255,.8);
   padding: .2em;
   text-shadow: 1px 1px 0 #fff, 0 0 5px #fff;
