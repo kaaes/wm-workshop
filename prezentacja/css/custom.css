@@ -21,6 +21,7 @@
   font-family: 'Wellfleet';
   letter-spacing: normal;
   font-weight: normal;
+  text-transform: none;
 }
 
 .reveal section img {
@@ -72,7 +73,7 @@
   display: block;
   width: 100px;
   height: 100px;
-  background: url('/img/arrow-1.png') no-repeat;
+  background: url('../img/arrow-1.png') no-repeat;
   background-size: contain;
   position: absolute;
   right: -110px;
@@ -109,7 +110,7 @@
 }
 
 #spotify figcaption::after {
-  background-image: url('/img/arrow.png');
+  background-image: url('../img/arrow.png');
   -webkit-transform: rotateY(180deg);
   left: -110px;
 }
@@ -161,7 +162,7 @@
 }
 
 .fridge body {
-  background: url('/img/lodowka.jpeg');
+  background: url('../img/lodowka.jpeg');
   background-size: cover;
 }
 
@@ -189,43 +190,49 @@
 .js .images img:nth-child(6) { -webkit-transform: rotate(1deg); }
 
 .vanilla body {
-  background: url('/img/vanilla1.jpeg');
+  background: url('../img/vanilla1.jpeg');
   background-size: cover;
 }
 
 .tools body {
-  background: url('/img/tools.jpeg');
+  background: url('../img/tools.jpeg');
   background-size: cover;
 }
 
 .blueprint body {
-  background: url('/img/blueprint.jpeg');
+  background: url('../img/blueprint.jpeg');
   background-size: cover;
 }
 
 .lego body {
-  background: url('/img/lego.jpeg');
+  background: url('../img/lego.jpeg');
   background-size: cover;
   background-position: center center;
 }
 
 .animation body {
-  background: url('/img/animation.jpeg');
+  background: url('../img/animation.jpeg');
   background-size: cover;
 }
 
 .eventy body {
-  background: url('/img/eventy.jpeg');
+  background: url('../img/eventy.jpeg');
   background-size: cover;
 }
 
 .intro body {
-  background: url('/img/wood.jpeg');
+  background: url('../img/wood.jpeg');
   background-size: cover;
 }
 
 .hello body {
-  background: url('/img/sky.jpeg');
+  background: url('../img/sky.jpeg');
+  background-size: cover;
+}
+
+.anatomy body {
+  background: url('../img/anatomy.jpeg');
+  /*background-position: center center;*/
   background-size: cover;
 }
 
@@ -236,7 +243,8 @@
 .lego h2,
 .animation h2,
 .eventy h2,
-.hello h1 {
+.hello h1,
+.anatomy h2 {
   background: rgba(255,255,255,.8);
   padding: .2em;
   text-shadow: 1px 1px 0 #fff, 0 0 5px #fff;
