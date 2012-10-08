@@ -38,6 +38,23 @@
         game.setActivePlayer(0);
 
         document.body.addEventListener('keydown', movePlayer, false);
+        document.body.addEventListener('keydown', switchPlayer, false);
+
+        function switchPlayer(ev) {
+          if (ev.which === 9) {
+            var currentPlayerIndex = game.players.indexOf(game.activePlayer);
+            var newIndex;
+            if (game.players[currentPlayerIndex + 1]) {
+              newIndex = currentPlayerIndex + 1;
+            } else {
+              newIndex = 0
+            }
+
+            game.setActivePlayer(newIndex);
+
+            ev.preventDefault();
+          }
+        }
 
         function movePlayer(ev) {
           var move = false, x, y;
