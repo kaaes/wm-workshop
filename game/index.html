@@ -7,61 +7,100 @@
     <link rel="stylesheet" href="game.css">
   </head>
   <body>
+    <audio id="step-sound" src="sounds/step.ogg">
+      Your browser does not support the <code>audio</code> element.
+    </audio>
+    <audio id="nom-sound" src="sounds/sd_0.ogg">
+      Your browser does not support the <code>audio</code> element.
+    </audio>
     <div id="gameboard">
       <ul id="players">
-<!--         <li><span>Annie</span></li>
-        <li><span>Fiona</span></li> -->
       </ul>
     </div>
     <script src="game.js"></script>
     <script>
       (function() {
+
+        var stepSound = document.querySelector('#step-sound');
+        var nomSound = document.querySelector('#nom-sound');
+
+        var game, player, goodie;
         
-        var game = new Game(document.querySelector('#gameboard'));
+        game = new Game(document.querySelector('#gameboard'), { tilesize: 50 });
         
-        game.init();
+        game.createBoard(15, 10);
+
+        game.addGoodies(30, { energy: 40, sound: nomSound });
+
+        game.addPlayer('Fiona', 'prince', { x: 1, y: 2 });
+        game.addPlayer('John','monk', { x: 5, y: 4 });
+
+        game.setActivePlayer(0);
 
         document.body.addEventListener('keydown', movePlayer, false);
 
         function movePlayer(ev) {
-          var player = game.activePlayer,
-              x = player.x,
-              y = player.y,
-              sx = x,
-              sy = y,
-              movement = true;
+          var move = false, x, y;
           
           switch (ev.which) {
             case 32: // space
               break;
             
             case 39: // right
-              sx = x + 1;
+              //x = 1;
+              //y = 0;
+              game.moveRight();
               break;
             
             case 37: // left
-              sx = x - 1;
+              //x = -1;
+              //y = 0;
+              game.moveLeft();
               break;
             
             case 38: // up
-              sy = y - 1;
+              //x = 0;
+              //y = -1;
+              game.moveUp();
               break;
             
             case 40: // down
-              sy = y + 1;
+              //x = 0;
+              //y = 1;
+              game.moveDown();
               break;
             
             default:
-            movement = false;
+              move = false;
               break;
           }
           
-          if (movement) {
-            game.movePlayer(sx, sy);
+          if (move) {
+            
+            stepSound.play();
+            game.movePlayer(x, y);
+            
+            setTimeout(function(){
+              stepSound.pause();
+              stepSound.currentTime = 0;
+            }, 300)
+            
             ev.preventDefault();
           }
           
         }
+        //         for (var i = 0; i < 30; i++) {
+
+        //   goodie = new Block('food', { tilesize: 50, energy: 40, sound: nomSound });
+
+        //   game.addGoodie(goodie);
+        // }
+
+        // player = new Player('Fiona', 'princess', { tilesize: 50, position: { x: 3, y: 2 } });
+        
+        // game.addPlayer(player);
+        
+        // game.addPlayer(new Player('Lara', 'bunny', { tilesize: 50, position: { x: 5, y: 5 } }));
       })();
     </script>
   </body>

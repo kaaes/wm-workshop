@@ -4,9 +4,17 @@ body {
 }
 
 #gameboard {
-  background: rgba(255,255,255,.3);
+  background-color: rgba(255,255,255,.1);
   margin: 50px auto;
   position: relative;
+}
+
+.grid {
+  background-image: -webkit-linear-gradient(top, black 1px, transparent 1px), -webkit-linear-gradient(left, black 1px, transparent 1px);
+  background-image: -moz-linear-gradient(top, black 1px, transparent 1px), -moz-linear-gradient(left, black 1px, transparent 1px);
+  background-image: -o-linear-gradient(top, black 1px, transparent 1px), -o-linear-gradient(left, black 1px, transparent 1px);
+  background-image: linear-gradient(top, black 1px, transparent 1px), linear-gradient(left, black 1px, transparent 1px);
+  background-size: 50px 50px;
 }
 
 ul {
@@ -26,6 +34,46 @@ li {
   display: inline-block;
   margin: 0;
   position: absolute;
+  z-index: 2;
+
+  -webkit-transform: translateX(9px);
+  -webkit-transition-property: top, left;
+  -webkit-transition-duration: .3s;
+
+  -moz-transform: translateX(9px);
+  -moz-transition-property: top, left;
+  -moz-transition-duration: .3s;
+
+  -o-transform: translateX(9px);
+  -o-transition-property: top, left;
+  -o-transition-duration: .3s;
+
+  -ms-transform: translateX(9px);
+  -ms-transition-property: top, left;
+  -ms-transition-duration: .3s;
+
+  transform: translateX(9px);
+  transition-property: top, left;
+  transition-duration: .3s;
+}
+
+li::before {
+  content: attr(data-health);
+  display: block;
+  text-align: center;
+  position: relative;
+  bottom: -52px;
+  background: #FBE8A8;
+  padding: .1em;
+  font-size: .5em
+}
+
+li[data-health='20']::before  {
+  background: #FF8877;
+}
+
+li[data-health='0']::before {
+  background: #DA2529;
 }
 
 li.bubble-hidden span {
@@ -72,132 +120,430 @@ li {
   -webkit-animation-duration: 1s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: steps(2);
+
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(2);
 }
 
-li:nth-child(n) {
-	background-position: -193px 0;
-  -webkit-animation-name: cr1;
-}
-
-li:nth-child(2n) {
-  background-position: 0 -192px;
-  -webkit-animation-name: cr2;
-}
-
-li:nth-child(3n) {
-  background-position: -193px -192px;
-  -webkit-animation-name: cr3;
-}
-
-li:nth-child(4n) {
+li {
   background-position: 0 0;
-  -webkit-animation-name: cr4;
+  -webkit-animation-name: gandalf;
+  animation-name: gandalf;
 }
 
-li:nth-child(5n) {
-  background-position: -97px 0;
-  -webkit-animation-name: cr5;
+li[data-direction=left] {
+  background-position: 0 -50px;
+  -webkit-animation-name: gandalfleft;
+  animation-name: gandalfleft;
 }
 
-li:nth-child(6n) {
-  background-position: -290px 0;
-  -webkit-animation-name: cr6;
+li[data-direction=right] {
+  background-position: 0 -98px;
+  -webkit-animation-name: gandalfright;
+  animation-name: gandalfright;
 }
 
-li:nth-child(7n) {
+li[data-direction=up] {
+  background-position: 0 -143px;
+  -webkit-animation-name: gandalfup;
+  animation-name: gandalfup;
+}
+
+li.prince {
+  background-position: -95px 0;
+  -webkit-animation-name: prince;
+  animation-name: prince;
+}
+
+li.prince[data-direction=left] {
+  background-position: -95px -50px;
+  -webkit-animation-name: princeleft;
+  animation-name: princeleft;
+}
+
+li.prince[data-direction=right] {
+  background-position: -95px -98px;
+  -webkit-animation-name: princeright;
+  animation-name: princeright;
+}
+
+li.prince[data-direction=up] {
+  background-position: -95px -143px;
+  -webkit-animation-name: princeup;
+  animation-name: princeup;
+}
+
+li.princess {
+	background-position: -192px 0;
+  -webkit-animation-name: princess;
+}
+
+li.princess[data-direction=right] {
+  background-position: -192px -100px;
+  -webkit-animation-name: princessright;
+  animation-name: princessright;
+}
+
+li.princess[data-direction=left] {
+  background-position: -192px -50px;
+  -webkit-animation-name: princessleft;
+  animation-name: princessleft;
+}
+
+li.princess[data-direction=up] {
+  background-position: -192px -142px;
+  -webkit-animation-name: princessup;
+  animation-name: princessup;
+}
+
+li.monk {
+  background-position: -288px 0;
+  -webkit-animation-name: monk;
+  animation-name: monk;
+}
+
+li.monk[data-direction=left] {
+  background-position: -288px -50px;
+  -webkit-animation-name: monkleft;
+  animation-name: monkleft;
+}
+
+li.monk[data-direction=right] {
+  background-position: -288px -97px;
+  -webkit-animation-name: monkright;
+  animation-name: monkright;
+}
+
+li.monk[data-direction=up] {
+  background-position: -288px -143px;
+  -webkit-animation-name: monkup;
+  animation-name: monkup;
+}
+
+li.bunny {
+  background-position: 0 -192px;
+  -webkit-animation-name: bunny;
+  animation-name: bunny;
+}
+
+li.bunny[data-direction=left] {
+  background-position: 0 -240px;
+  -webkit-animation-name: bunnyleft;
+  animation-name: bunnyleft;
+}
+
+li.bunny[data-direction=right] {
+  background-position: 0 -289px;
+  -webkit-animation-name: bunnyright;
+  animation-name: bunnyright;
+}
+
+li.bunny[data-direction=up] {
+  background-position: 0 -335px;
+  -webkit-animation-name: bunnyup;
+  animation-name: bunnyup;
+}
+
+li.boy {
   background-position: -97px -192px;
-  -webkit-animation-name: cr7;
+  -webkit-animation-name: boy;
+  animation-name: boy;
 }
 
-li:nth-child(8n) {
-  background-position: -290px -192px;
-  -webkit-animation-name: cr8;
+li.boy[data-direction=left] {
+  background-position: -97px -240px;
+  -webkit-animation-name: boyleft;
+  animation-name: boyleft;
 }
 
-li.stop-animation {
+li.boy[data-direction=right] {
+  background-position: -97px -287px;
+  -webkit-animation-name: boyright;
+  animation-name: boyright;
+}
+
+li.boy[data-direction=up] {
+  background-position: -97px -335px;
+  -webkit-animation-name: boyup;
+  animation-name: boyup;
+}
+
+li.tux {
+  background-position: -193px -192px;
+  -webkit-animation-name: tux;
+  animation-name: tux;
+}
+
+li.tux[data-direction=left] {
+  background-position: -193px -240px;
+  -webkit-animation-name: tuxleft;
+  animation-name: tuxleft;
+}
+
+li.tux[data-direction=right] {
+  background-position: -193px -287px;
+  -webkit-animation-name: tuxright;
+  animation-name: tuxright;
+}
+
+li.tux[data-direction=up] {
+  background-position: -193px -335px;
+  -webkit-animation-name: tuxup;
+  animation-name: tuxup;
+}
+
+li.heidi {
+  background-position: -288px -192px;
+  -webkit-animation-name: heidi;
+  animation-name: heidi;
+}
+
+li.heidi[data-direction=left] {
+  background-position: -288px -240px;
+  -webkit-animation-name: heidileft;
+  animation-name: heidileft;
+}
+
+li.heidi[data-direction=right] {
+  background-position: -288px -287px;
+  -webkit-animation-name: heidiright;
+  animation-name: heidiright;
+}
+
+li.heidi[data-direction=up] {
+  background-position: -288px -335px;
+  -webkit-animation-name: heidiup;
+  animation-name: heidiup;
+}
+
+li.active {
+  box-shadow: 0 0 5px 1px rgba(255,255,255,.9);
+}
+
+li:not(.active) {
   -webkit-animation: none;
 }
 
-li.stop-animation span {
-  background: #ccc;
+li:not(.active) span {
+  color: #666;
 }
 
-@-webkit-keyframes cr1 {  
-  from {
-    background-position: -193px 0;
-  }
+.food {
+  width: 33px;
+  height: 34px;
+  background: url('img/foodtile.png');
+  position: absolute;
+  background-position: 33px 34px;
+  z-index: 1;
 
+  -webkit-transform: translateX(9px) translateY(7px);
+  -moz-transform: translateX(9px) translateY(7px);
+  -ms-transform: translateX(9px) translateY(7px);
+  -o-transform: translateX(9px) translateY(7px);
+  transform: translateX(9px) translateY(7px);
+}
+
+/*.food:nth-child(2n) {
+  background-position: 0 34px;
+}
+
+.food:nth-child(3n) {
+  background-position: 33px 34px;
+}
+
+.food:nth-child(4n) {
+  background-position: 65px 34px;
+}*/
+
+@-webkit-keyframes princess {  
   to {
     background-position: -255px 0;
   }
 }
 
-@-webkit-keyframes cr2 {  
-  from {
-    background-position: 0 -192px;
+@-webkit-keyframes princessright {  
+  to {
+    background-position: -255px -97px;
   }
+}
 
+@-webkit-keyframes princessleft {  
+  to {
+    background-position: -255px -50px;
+  }
+}
+
+@-webkit-keyframes princessup {  
+  to {
+    background-position: -255px -145px;
+  }
+}
+
+@-webkit-keyframes bunny { 
   to {
     background-position: -125px -192px;
   }
 }
 
-@-webkit-keyframes cr3 {  
-  from {
-    background-position: -193px -192px;
+@-webkit-keyframes bunnyleft { 
+  to {
+    background-position: -125px -240px;
   }
+}
 
+@-webkit-keyframes bunnyright { 
+  to {
+    background-position: -125px -289px;
+  }
+}
+
+@-webkit-keyframes bunnyup { 
+  to {
+    background-position: -125px -335px;
+  }
+}
+
+@-webkit-keyframes tux {  
   to {
     background-position: -255px -192px;
   }
 }
 
-@-webkit-keyframes cr4 {  
-  from {
-    background-position: 0 0;
+@-webkit-keyframes tuxleft {  
+  to {
+    background-position: -255px -240px;
   }
+}
 
+@-webkit-keyframes tuxright {  
+  to {
+    background-position: -255px -289px;
+  }
+}
+
+@-webkit-keyframes tuxup {  
+  to {
+    background-position: -255px -335px;
+  }
+}
+
+@-webkit-keyframes gandalf {  
   to {
     background-position: -66px 0;
   }
 }
 
-@-webkit-keyframes cr5 {  
-  from {
-    background-position: -97px 0;
+@-webkit-keyframes gandalfleft {  
+  to {
+    background-position: -66px -50px;
   }
+}
 
+@-webkit-keyframes gandalfright {  
+  to {
+    background-position: -66px -97px;
+  }
+}
+
+@-webkit-keyframes gandalfup {  
+  to {
+    background-position: -66px -143px;
+  }
+}
+
+@-webkit-keyframes prince {  
   to {
     background-position: -225px 0;
   }
 }
 
-@-webkit-keyframes cr6 {  
-  from {
-    background-position: -290px 0;
-  }
-
+@-webkit-keyframes princeleft {  
   to {
-    background-position: -416px 0;
+    background-position: -225px -50px;
   }
 }
 
-@-webkit-keyframes cr7 {  
-  from {
-    background-position: -97px -192px;
+@-webkit-keyframes princeright {  
+  to {
+    background-position: -225px -97px;
   }
+}
 
+@-webkit-keyframes princeup {  
+  to {
+    background-position: -225px -142px;
+  }
+}
+
+@-webkit-keyframes monk {  
+  to {
+    background-position: -414px 0;
+  }
+}
+
+@-webkit-keyframes monkleft {  
+  to {
+    background-position: -414px -50px;
+  }
+}
+
+@-webkit-keyframes monkright {  
+  to {
+    background-position: -414px -97px;
+  }
+}
+
+@-webkit-keyframes monkup {  
+  to {
+    background-position: -414px -143px;
+  }
+}
+
+@-webkit-keyframes boy {  
   to {
     background-position: -225px -192px;
   }
 }
 
-@-webkit-keyframes cr8 {  
-  from {
-    background-position: -290px -192px;
+@-webkit-keyframes boyleft {  
+  to {
+    background-position: -225px -240px;
   }
+}
 
+@-webkit-keyframes boyright {  
+  to {
+    background-position: -225px -289px;
+  }
+}
+
+@-webkit-keyframes boyup {  
+  to {
+    background-position: -225px -335px;
+  }
+}
+
+@-webkit-keyframes heidi {  
   to {
     background-position: -416px -192px;
+  }
+}
+
+@-webkit-keyframes heidileft {  
+  to {
+    background-position: -416px -240px;
+  }
+}
+
+@-webkit-keyframes heidiright {  
+  to {
+    background-position: -416px -289px;
+  }
+}
+
+@-webkit-keyframes heidiup {  
+  to {
+    background-position: -416px -335px;
   }
 }
