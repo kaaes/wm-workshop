@@ -227,7 +227,7 @@ logowanie do konsoli może też odbywać się na dwa sposoby
 log pokaze nam widok drzewa
 dir pokaże nam widok obiektu
 
-obaczcie jak dużo jest tych metod, oczywiście nie trzeba znać ich wszystkich
+zobaczcie jak dużo jest tych metod, oczywiście nie trzeba znać ich wszystkich
 te które mogą się przydać to id zawierajace identyfikator elementu
 classList i className zawierające klasy elementu
 innerHTML który zawiera treśc elemetu
@@ -245,7 +245,18 @@ elementów wyglądu (np. tlo, ramka, rozmiar) lepiej jest zdefiniować te dwa
 style w cssie i jedynie przełączyć klasę za pomocą classList
 $('#my-pre') classList.add changed
 
-20. Ostatni z elementów w tej sekcji - jak tworzyć elementy DOM
+dać pierwszą wersję gry! - statyczne elementy hatemelowe
+zmienić kolor i wymiary planszy do gry
+zmienić imię gracza
+zmienić jego wygląd przez przełączanie klas
+przesuwać go po planszy zmieniajac top i left
+
+przy okazji - dlaczego skrypty dodajemy na dole strony?
+
+20. W przykąłdzie, którym właśnei się bawiliście
+elementy DOm były stworzone staycznie  - zmarkupu
+często jednak konieczne jest dynamiczne tworzenie obiektów
+a więc jak tworzyć DOM?
 
 sposobów jest kilka - można zrobić to za pomocą prostego innerHTML
 książkową metodą jest utworzenie elementu za pomocą document.createElement
@@ -254,3 +265,108 @@ metoda cloneNode jest przydatna jeśli tworzycie wiele takich samych elementów
 które są dość skomplikowane (wiele zagnieżdżonych elementów)
 wtedy zamiast tworzyć je za każdym razem można stworzyć je raz i potem
 jedynie kopiować
+
+pokazać na kodzie
+
+specjalnym elementem jest document fragment - uzyteczny jesli potrzebujemy dodać grupę obiektów
+
+ważna jest kolejnosć dodawania do DOM - wyobraźmy sobie że tworzymy listę z elementami
+co powinniśmy zrobić najpierw> stworzyc liste i didac do atrony a nastepnie dodawac elementy
+czy moze najpierw dodac elementy do listy a dopiero potem liste do strony
+otorz powinno sie to robic zawsze z dolu do gory
+dlaczego - kiedy element staje sie widoczny i zaczyna zajmowac miejsce na stronie
+zaczyna tez wplywac na otaczajace go elementy
+aby dostosowac wyglad strony do nowej struktury przegladarka musi przerysowac a czasem
+takze przeliczyc polozenie elementow na stronie
+jezeli bedziemy dodawac 50 elementow takich przerysowan moze byc 50
+w przypadku utworzenia listy dodania do niej elementow a dopiero potem calosci do DOMa
+przerysowanie następuje tylko raz!
+
+PRZERWKA!
+
+druga wersja gry! - plansza i player stworzone za pomocą konstruktora
+zrobić to samo co powyżej używając metod
+(w konsoli pokazac jak zbudowane są obiekty)
+pokazać funkcję dodającą gracza do planszy
+
+21. Animacje
+normalnie animacje nie byłyby tematem na workshop dla początkujących
+ale animowanie elementów serwisów internetowych jest tak popularnym zastosowaniem JS, 
+że postanowiłam jednak o nich wspomnieć
+Zasada pierwsza i najważniejsza - JS do animacji należy używać jak najmniej!
+CSS potrafi zrobić większość rzeczy do których tradycyjnie wykorzystywany byl JS
+Dotyczy to przede wszystkim płynnych przejść kolorów czy rozmiarów
+
+pokazać to na przykąłdzie prostokąta
+
+Oczywiście w przypadku złożonych animacji bez JS się nie obędzie ale to jest
+już temat na osobny workshop
+
+trzecia wersja gry! - w cssach dodana animacja
+ewentualnie zaimplementować metody goUp/left/right
+
+DUŻA PRZERWKA!!!!!!
+
+22. Eventy czyli to, co najlepsze w JSie
+W mojej osobistej opinii eventy są najciekawszą częścią JavaScriptu
+bo pozwalają na bezpośrednią interakcję użytkownika ze stoną czy aplikacją
+
+Dodawanie eventu jest proste, potrzebna jest jedynie referencja do obiektu i funckja
+ktora ma zostac wykonana gdy uzytkownik odpali event np przez klikniecie myszka
+
+Trzeci parametr dotyczy kolejnosci w jakiej event przechodzi przez drzewo DOM - ale możecie założyć
+że powinien tam zawsze znaleźć się false. W większości przeglądarek trzeci parametr jest opcjonalny
+
+Ta sama funkcja zwana listenerem moze byc dodana do wielu elementow
+podobnie jeden element moze nasluchiwac na dowolna ilosc eventow
+
+23. A jakie eventy mamy do dyspozycji
+jest ich cale mnostwo!
+Najbardziej uzyteczne to te związane z akcjami myszką (click, mousemove)
+z klawiaturą - keypress, keydown
+przydatne bywają także eventy formularzy takie jak submit, change czy blur
+
+tak jak wspomnialam eventow sa cale stada. Na urzadzeniach dotykowych bedziemy mieli cala
+grupe eventow typu touch
+urzadzenia przenosne i niektore laptopy maja akcelerometr ktory tez przesyla eventy
+
+pokazac skrypt
+
+W evencie siedzi mnóstwo ciekawych rzeczy, najlepszą metodą, żeby sprawdzić co w nim znajdziemy
+jest wypisanie go do konsoli
+możemy posłużyć się console log albo monitor events
+Najważniejsze własności które znajdziemy w evencie to target, który pozwoli nam złapać element 
+który spowodował event (po kliknięciu w link tym elementem będzie własnei ten link)
+eventy myszki mają koordynaty punktu w któ®ym nastąpiło kliknięcie
+a klawiatury informację o tym, któ®y klawisz został naciśnięty
+
+przydatna może też być metoda preventDefault() powstrzymuje on domysle akcje przegladarki
+bez niego kazdorazowo klikniecie w link konczyloby sie przejsciem do innej strony
+preventDefault wylacza te funcjonalnosc pozwalajac nam nadpisac ja swoją własną
+
+Delegacja eventów
+..................
+
+delegację pokazac na przykladzie listy
+
+czwarta wersja gry z konstruktorami i active playerem
+- dodaj obsługę gracza z klawiatuy
+- dodaj kolejnych dwoch graczy
+- dodaj przełączanie gracza na klik (delegacja moze sie przydac!)
+
+23. Dalej
+
+na wersji czwartej
+- dodać goodies
+- detekcja kolizji
+- health +- krok/food
+- wymyslić jak zrobić game over / win!
+
+24. Dalej poopowiadać o API
+
+- dodać dźwięk do kroku
+- może do nomnięcia
+- zapisanie wyniku w localstorage
+
+25. Makey makey!
+

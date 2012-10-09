@@ -265,6 +265,24 @@
   background-size: cover;
 }
 
+.break body {
+  background: url('../img/break.jpeg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.thx body {
+  background: url('../img/thx.jpeg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.questions body {
+  background: url('../img/questions.jpeg');
+  background-size: cover;
+  background-position: center top;
+}
+
 .fridge h2,
 .vanilla h2,
 .tools h2,
@@ -275,7 +293,10 @@
 .hello h1,
 .anatomy h2,
 .playtime h2,
-.bling h2 {
+.bling h2,
+.break h2,
+.relax h2,
+.questions h2 {
   background: rgba(255,255,255,.8);
   padding: .2em;
   text-shadow: 1px 1px 0 #fff, 0 0 5px #fff;

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8"/>
+
+	<title>Woohoo</title>
+	<style>
+	  body { 
+	    perspective(1000px);
+	    perspective-origin: 50% 50%; 
+	  }
+	  #canvas {
+	    background: #eee;
+	  }
+	  
+	  #box {
+	    width: 300px;
+	    -webkit-transform: perspective(300px);
+	    background: rgba(0,0,0,.4);
+	    padding: 1em;
+	  }
+	</style>
+</head>
+
+<body>
+  <div id="info"></div>
+  <canvas id="canvas"></canvas>
+  <script>    
+    var canvas = document.getElementById('canvas');
+    canvas.width = 600;
+    canvas.height = 300;
+    var c = canvas.getContext('2d');
+    
+    var speed = [0,0];
+    var acceleration = [0.01, 0.02];
+    var distance = [0, 0];
+    var i = 0;
+    var position = [150, 10];
+    
+    (function animate() {
+      window.webkitRequestAnimationFrame(animate);
+
+      distance[0] += speed[0];
+      distance[1] += speed[1];
+      
+      speed[0] += acceleration[0];
+      speed[1] += acceleration[1];
+      
+      if (position[1] + distance[1] >= canvas.height || 
+          position[1] + distance[1] <= 0) {
+        speed[1] = -speed[1] * .9;
+      }
+
+      if (position[0] + distance[0] >= canvas.width || 
+        position[0] + distance[0] <= 0) {
+        speed[0] = -speed[0] * .9;
+      }
+
+      c.save();
+      c.translate(position[0], position[1]);
+      c.beginPath();
+      c.clearRect(-150,-10,canvas.width,canvas.height);
+      c.fillStyle = 'rgba(0,0,0,0.1)';
+      c.translate(distance[0], distance[1]);
+      c.arc(0, 0, 10, 0, 2*Math.PI,false);
+      c.stroke();
+      c.restore();
+      i++;
+    })();
+    
+    var beta, gamma;
+    window.ondeviceorientation = function(evt) {
+      if(typeof beta === 'number' && typeof gamma === 'number') {
+        info.innerHTML = 'alpha: ' + ~~evt.alpha + ' beta: ' + ~~evt.beta + 'gamma: ' + ~~evt.gamma;
+        acceleration[1] += (evt.beta - beta)/200;
+        acceleration[0] = Math.tan((evt.gamma - gamma) * Math.PI/180) * 50 * Math.abs(acceleration[1]);
+      }
+      beta = evt.beta;
+      gamma = evt.gamma;
+    }
+  </script>
+</body>
+</html>

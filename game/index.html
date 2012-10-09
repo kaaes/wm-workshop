@@ -61,7 +61,12 @@
         function movePlayer(ev) {
           var move = false, x, y;
 
-          game.saveGameState();
+          stepSound.play();
+
+          setTimeout(function(){
+            stepSound.pause();
+            stepSound.currentTime = 0;
+          }, 300)
           
           switch (ev.which) {
             case 32: // space
@@ -97,14 +102,7 @@
           }
           
           if (move) {
-            
-            stepSound.play();
             game.movePlayer(x, y);
-            
-            setTimeout(function(){
-              stepSound.pause();
-              stepSound.currentTime = 0;
-            }, 300)
             
             ev.preventDefault();
           }
