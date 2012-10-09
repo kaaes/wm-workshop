@@ -332,7 +332,7 @@ urzadzenia przenosne i niektore laptopy maja akcelerometr ktory tez przesyla eve
 
 pokazac skrypt
 
-W evencie siedzi mnóstwo ciekawych rzeczy, najlepszą metodą, żeby sprawdzić co w nim znajdziemy
+24. W evencie siedzi mnóstwo ciekawych rzeczy, najlepszą metodą, żeby sprawdzić co w nim znajdziemy
 jest wypisanie go do konsoli
 możemy posłużyć się console log albo monitor events
 Najważniejsze własności które znajdziemy w evencie to target, który pozwoli nam złapać element 
@@ -344,7 +344,7 @@ przydatna może też być metoda preventDefault() powstrzymuje on domysle akcje 
 bez niego kazdorazowo klikniecie w link konczyloby sie przejsciem do innej strony
 preventDefault wylacza te funcjonalnosc pozwalajac nam nadpisac ja swoją własną
 
-Delegacja eventów
+25. Delegacja eventów
 ..................
 
 delegację pokazac na przykladzie listy
@@ -354,7 +354,7 @@ czwarta wersja gry z konstruktorami i active playerem
 - dodaj kolejnych dwoch graczy
 - dodaj przełączanie gracza na klik (delegacja moze sie przydac!)
 
-23. Dalej
+26. Dalej
 
 na wersji czwartej
 - dodać goodies
@@ -362,11 +362,11 @@ na wersji czwartej
 - health +- krok/food
 - wymyslić jak zrobić game over / win!
 
-24. Dalej poopowiadać o API
+27. Dalej poopowiadać o API
 
 - dodać dźwięk do kroku
 - może do nomnięcia
 - zapisanie wyniku w localstorage
 
-25. Makey makey!
+28. Makey makey!
 
