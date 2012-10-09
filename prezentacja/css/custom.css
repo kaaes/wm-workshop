@@ -7,6 +7,12 @@
   width: 100%;
 }
 
+.reveal pre.changed code {
+  font-family: 'Princess Sofia';
+  background: #eee;
+  color: #000;
+}
+
 .reveal small {
   font-size: 14px;
 }

@@ -1,0 +1,256 @@
+1. Witajcie, dziękuję że chicało się wam poświęcić Wasz czas
+Bedziemy dzisiaj sporo bawić się JS, i mam nadzieję, że zbudujemy razem coś ciekawego
+ale pozwólcie, że zacznę od przedstawienia się
+
+Nzywam się Kasia, jestem web developerem
+
+Pracuję w Spotify, o którym niektórzy mogli słyszeć
+Jest to szwedzka firma, startup, która zajmuje się dostarczeniem ludziom muzyki
+w formie streamingu. Co to oznacza? Ze zamiast kupować płytu lub pojedyncze utwory
+użytkownicy płacą miesięczny abonament (lub i nie) i mają dostęp do kilkunastu milionów
+utworów znajsujących się w katalogu.
+
+Siedziba Spotify znajduje się w Sztokholmie i tam też obecnie mieszkam. Wczśniej
+niemal dekadę spędziłam w Krakowie studiując na EPI i pracując w kilku firmach
+
+Moją specjalnością jest front-end czyli przede wszystkim JavaScript, HTML i CSS
+i wszystko co związane z otwartymi technologiami. Otwarte technologie to takie
+do któych nikt nie rości sobie prawa własności i które dostepne są powszechnie
+Właśnie taką technologią jest JavaScript w odróżnieniu np od komercyjnego Flasha
+
+Jeśli mielibyscie ochotę do mnie w jakiejś spawie napisać, to są adresy pod którymi można
+mnie złapać najcześciej. Można też próbować na Twitterze
+
+2. A zatem - Hello JavaScript
+
+3.Ten obrazek mozna znaleźc w wielu miejscach w internecie. DOsć dobrze obrazuje on
+jak postrzegany jest JS wśród developerów
+wiele nieporozumien narosło wokół szczególnie złych elementów języka jak document.write
+dzisiejeszy js wygląda jednak zupełnie inaczej, a jego kolejne wersje stopniowo
+wypełniają luki
+To co decyduje o potędze JS to środowisko w którym wystepuje najczęściej - przeglądarka
+poza przeglądarką jest tylko jednym z wielu języków programowania ale dzięki
+przegldarkom każdy może natychmiast zacząć pisać w tym języku
+niepotrzebne są specjalne srodowiska wystarczy jedynie jedna z rzeglądarek aby zacząć programowac
+
+4. Czy zatem można spodziewać się, że JS wyskoczy na nas z lodówki?
+tego jeszcze nie musicie się obawiać ale JS dzisiaj to ine tylko strony i aplikacje webowe
+jakie wszyscy znamy
+W JSie pisze się dzisiaj gry
+Aplikacje desktopowe i mobilne
+Windows 8 ma umożliwiać tworzenie natywnych programów za pomocą JavaScriptu
+Oprogramowanie telewizorów - i to wcale nie tylk otych najnowszych
+Systemy opercyjne! - Mozilla pracuje nad systemem FF os którege interfejs w całości zbudowany
+jest w HTMLu/JS/CSS
+Zatem kto wie - pewnie lodówki z JS w środku doczekamy się już całkiem wkrótce :)
+
+5. Podczas dzisiejszych warsztatów będziemy używać tzw vanilla JS, oznacza to czysty
+JS w odróżnieniu od różnych frameworków takich jak jQuery
+Dlaczego? Bo czysty JS świetnie poradzi sobie z zadaniami, które przed nim postawimy
+
+jQuery to zawsze minimum jeden dodatkowy request HTTP i nie waży też wcale tak mało
+poza tym metody jQuery i tak muszą skorzystać pod maską z czystego jsa co powoduje że
+są one nieraz znacznie wolniejsze niż metody natywne
+
+JS potrafi dzisiaj w prosty sposób zaznaczać elementy HTMLa. Jeśli nie podoba się nam
+metoda queryeectorAll można w prosty sposób napisać do niej wrapper, który sprawi,
+że będzie znacznie krótsza. i będzie wyglądać bardzo znajomo
+
+To samo dotyczy manipulowania własnosciami elementów HTML. Elementy jQuery i vanilla JS są do siebie bardzo
+podobne
+
+W przypadku eventów, składnia frameworkowa zwykle jest dużo przyjemniejsza niż JSowa, ale
+do tego można się przyzwyczaić
+
+6. Czego zatem używać? Opowiedź jak zwykle brzmi - to zależy!
+Frameworki są zwykle bardzo przydatnymi narzędziami i jeśli decydujecie się 
+na zudowanie większej aplikacji, wtedy mogą się przydać dla wygody
+ale jeśli budujecie średniej wielkości stronę, gdzie głwne użycie JS to 
+manipulacja elementami HTML, sugerowałabym pozostanie przy natywnym JavaScripcie
+
+7. Developer Tools to fenomenalne narzedzie, bez którego dzisiaj nie mozna się obejść.
+W przeglądarcze można je otworzyć za pomocą skrótu klawiszowego,
+można też prawym klikiem dac inspect element
+
+(otwieramy konsolę)
+
+Nam dzisiaj najbardzie przyda się konsola, przydatny może też być panel sources
+który pozwala na przeglądanie skryptów i badanie jak przebiega program
+Konsola jest przydatna do poprawiania błędów w skrypcie, można też w niej programować
+Aby oswoić sie z konsolą otwórzcie proszę plik ... kiedy podejrzycie go w konsoli zobaczycie błąd JS
+razem z linią w której wystepuje. Jeśli teraz klikniemy na nr linii pokaże nam się dokładnie
+dzie jest błąd spróbujcie go poprawić i odświeżyć stronę
+Teraz przez 2 minuty spróbujcie, czy uda się wam poprawić wszystkie blędy i poprawnie wyświetlić stronę
+
+(ćwiczenie z poprawianiem błedów)
+
+8. Ok, teraz przyszedł czas na krótki przegląd najważniejszych funkcji języka
+Zanim zaczniemy krótka uwaga - najcześciej jeśli googlujecie za jakimiś metodami JSa
+na początku wynikó∑ wyszukiwanai znajdzie się strona w3schools
+Nigdy, przenigdy z niej nie korzystajcie! Warto roważyć usunięcie jej całkowicie
+z wynikó∑ wyszukiwania
+
+Bardzo dobrym źródłem jest zkolei MDN - Mozilla Developer Network, na której znajdziecie wyczerpujące opisy
+elementów języka
+
+9. Zmienne czyli podstawowa cegiełka, zmienna przechowuje wartość
+zmienną deklarujemy za pomocą słowa var
+jeśli zmienna zadeklarujemy mozemy z niej korzystac 
+
+(var a i a w konsoli)
+
+jeśli tego nie zrobimy próba użycia spowoduje błąd 
+
+(b w konsoli)
+do zmiennej mozemy przypisac jakas wartosc i od tej pory bedzie ona tę wartość przechowywać
+
+a = 'kot'
+a
+a = 1
+a
+a + 2 // 3
+
+zmienne mogą mieć różne typy, jednym z nich jest string czyli każdy tekst zamknięty w 
+apostrofach (albo cudzyslowach)
+
+'kot' to string
+kot to nazwa zmiennej
+
+innym typem jest number czyli liczba
+
+1 to liczba
+1 + 2 // 3
+'1' to string
+'1' + '2' = '12'
+
+Jak zauważyliście dodawanie na liczbach powoduje ich sumowaniea dodawanie na stringach ich laczenie
+tzw konkatenację
+
+zmienne typu logicznego / boolean true i false
+używane są zwykle w porównaniach np kiedy porównujemy dwie liczby
+
+42 < 13 // false
+42 > 2 // true
+2 === 2 // true
+
+zwroccie uwage ze porownujac uzywamy potrojnego rownasia - pojedynczy oznacza przypisanie
+
+10. wyrażenie warunkow - tzw if/else
+bardzo przydane gdy chcemy wykonac jakies dzialanie w zależnosci od pewnego warunku
+
+11. Pętla for - wygodny sposób na wykonanie jakiegoś kodu wiele razy
+pierwszy parametr to wartość od jakiej zaczynamy - tutaj 0
+drugi to warunek przerwania pętli - w momencie kiedy będzie prawdziwy pętla się kończy
+tutaj przerwiemy gdy i osiągnie 10
+trzeci to operacja do wykonania po kazdym przebiegu pętli - w tym przypadku będziemy zwiększać i o 1
+
+w efekcie pętla wykonuje kod 10 razy wpisując nowe wartości do tablicy
+
+12. Funkcje to bardzo bardzo ważny element
+generalnie funkcja to kawałek kodu który możemy używać wiele razy z różnymi parametrami
+funkcja może zwracać wartość
+
+(copy paste numbers to the console)
+addNumbers enter
+
+parametry funkcji są wypełniane wartościami które zostaną do nich przekazane
+
+13. Funkcje mogą też same być używane jako parametry.
+Bardzo często takie użycie to tzw callback i oznacza to że przekazana funkcja
+nie zostanie wywołana natychmiast ale dopiero po spełnieniu okraslonych warunków
+Dlatego nie przerażajcie się takimi zapisami - w tym przypadku oznacza to że 
+ten callback zostanie zawołany dopiero gdy użytkownik kliknie dany element
+
+Funkcja może też być przekazana w postaci tzw referencji czyli jej nazwy (dokladnie jak inne zmienne)
+
+ponownie addNumbers() - wywolanie ale addNumbers - referencja
+te dwa zapisy są równoważne
+
+14. Obiekty są reprezentacją rzeczywistego świata w kodzie
+tak jak obiektem jest stół czy dom albo człowiek
+Obiekt to struktura która ma swoje właściwości (tak jak stol moze byc drewniany lub brązowy)
+Obiekt może też mieć metody, które oznaczają działania które można wykonać
+
+np. obiekt reprezentujący psa może wyglądać tak:
+możemy z niego odczynać właściwości takie jak imię czy kolor oraz zmusić go by zaszczkał
+przez wywołanie metody bark
+własności obiektów można zmieniac tak jak imię tutaj można też dodwać nowe
+
+W konsoli możemy podejrzeć kilka obiektów wbudowanych w JavaScript - Math
+widzicie że Math ma kilka własciwości oraz sporo metod (to te z funkcjami)
+Możemy użyć go do policznenia kilku rzeczy
+np obwód koła o promieniu 5
+teraz zadanie dla was - policzcie pole tego koła żeby było trudniej
+użyjcie metody Math.pow (specyfikacja na MDN)
+string też może być użwany jako obiekt
+replace abcd
+obiektem jest też np window który ma masę właściwości i metod!
+
+
+Jeśli cała koncepcja obiektów wydaje się wam skomplikowana nie przejmujcie się
+w trakcie zadań wiele rzeczy wyjaśni się samo
+
+13. Tablice - to specjalny rodzaj obiektu, który służy do trzymania elementów
+w określonej kolejności
+w tablicy elementy są numerowane czyli dostęp do nich można uzyskać za pomocą indeksów
+numerycznych
+
+Tutaj zaczynamy od pustej tablicy - metoda length zwraca 0
+push dodaje nowy element na końcu tablicy
+po dodaniu dwóch elementów możemy je odczytać za pomocą indeksów
+
+Tablice są bardzo przydatne i mają wiele ciekawych metod, a przeczytać o nich można na MDN 
+
+14. Ok - koniec nudnych rzeczy, dzisiaj będziemy budować grę
+a żeby móc to zrobić będziemy potrzebować pobawić się DOMem
+
+15. Co to jest DOM - DOM to Document Object Model
+jest to drzewo które zawiera elementy zdefiniowane w htmlu w odpowiedniej kolejności
+i odpowiednio zagnieżdzone
+
+pokazany tu fragment htmla czyli div z p w środku oraz lista są parsowane przez przeglądarkę
+do postaci obiektów HTML na których może operować JS
+
+16. Jak zatem dobrać się do takiego elementu? Myślę, że każdy z Was zna odpowiadź
+dzięki metodom-selektorom, w ten sposób przechodzimy od markupu który jest zwykłym tekstem
+do obiektów, na których możemy działać
+
+17. We współczesnych przegladarkach najlepiej użyć do tego metody QuerySelecorAll która pozwala korzystać
+ze składni cssa. Dla wygodny można sobie napisać taką metodę która jest dużo krótsza
+
+18. Elementy HTML maja swoje własności i metody (jak każdy inny obiekt)
+jest ich całkiem sporo
+
+w konsoli querySelector('.slides');
+konsola ma metodę pomocniczą $$ która jest skrótem do querySelectorAll
+logowanie do konsoli może też odbywać się na dwa sposoby
+log pokaze nam widok drzewa
+dir pokaże nam widok obiektu
+
+obaczcie jak dużo jest tych metod, oczywiście nie trzeba znać ich wszystkich
+te które mogą się przydać to id zawierajace identyfikator elementu
+classList i className zawierające klasy elementu
+innerHTML który zawiera treśc elemetu
+style dzięki któ®emu mamy dostep do elementów definujących wygląd obiektu
+
+19. Elementy te można zmieniać dynamicznie
+(mozilla.org)
+zaznaczyc jeden z elementow zmienic innerHTML
+dodać ramkę
+i kolor tła
+
+Najprosszym sposobem na zmianę elementu jest bezpośrednia manipulacja na stylach
+Jednak kiedy w grę wchodzą poważniejsze zmiany które składają sie z wielu 
+elementów wyglądu (np. tlo, ramka, rozmiar) lepiej jest zdefiniować te dwa
+style w cssie i jedynie przełączyć klasę za pomocą classList
+$('#my-pre') classList.add changed
+
+20. Ostatni z elementów w tej sekcji - jak tworzyć elementy DOM
+
+sposobów jest kilka - można zrobić to za pomocą prostego innerHTML
+książkową metodą jest utworzenie elementu za pomocą document.createElement
+nadanie mu własności i dodanie go do strony za pomocą metody appendChild
+metoda cloneNode jest przydatna jeśli tworzycie wiele takich samych elementów
+które są dość skomplikowane (wiele zagnieżdżonych elementów)
+wtedy zamiast tworzyć je za każdym razem można stworzyć je raz i potem
+jedynie kopiować

@@ -1,0 +1,27 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #ECE09D;
+  margin: 0;
+  padding: 0;
+}
+
+#scene {
+  width: 100%;
+  height: 100%
+}
+
+.scene {
+  margin: 0 auto;
+  text-align: center;
+  background-image: -webkit-linear-gradient(bottom, rgba(253,162,56,1), rgba(253,162,56,0));
+}
+
+.doll {
+  width: 120px;
+  height: 250px;
+  margin-top: 200px;
+  display: inline-block;
+  background-position: center top;
+}
