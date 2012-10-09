@@ -334,7 +334,6 @@ li:not(.active) span {
   height: 34px;
   background: url('img/foodtile.png');
   position: absolute;
-  background-position: 33px 34px;
   z-index: 1;
 
   -webkit-transform: translateX(9px) translateY(7px);
@@ -344,17 +343,21 @@ li:not(.active) span {
   transform: translateX(9px) translateY(7px);
 }
 
-/*.food:nth-child(2n) {
+.tomatoes {
+  background-position: -64px 1px;
+}
+
+.potatoes {
   background-position: 0 34px;
 }
 
-.food:nth-child(3n) {
+.greens {
   background-position: 33px 34px;
 }
 
-.food:nth-child(4n) {
+.fish {
   background-position: 65px 34px;
-}*/
+}
 
 @-webkit-keyframes princess {  
   to {

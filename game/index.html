@@ -30,10 +30,12 @@
         
         game.createBoard(15, 10);
 
-        game.addGoodies(30, { energy: 40, sound: nomSound });
+        game.addGoodies(20, { type: 'greens', energy: 40, sound: nomSound });
+        game.addGoodies(10, { type: 'tomatoes', energy: 60, sound: nomSound });
+        game.addGoodies(5, { type: 'fish', energy: 80, sound: nomSound });
 
-        game.addPlayer('Fiona', 'prince', { x: 1, y: 2 });
-        game.addPlayer('John','monk', { x: 5, y: 4 });
+        game.addPlayer('Fiona', 'prince');
+        game.addPlayer('John','monk');
 
         game.setActivePlayer(0);
 
@@ -58,6 +60,8 @@
 
         function movePlayer(ev) {
           var move = false, x, y;
+
+          game.saveGameState();
           
           switch (ev.which) {
             case 32: // space
@@ -106,18 +110,6 @@
           }
           
         }
-        //         for (var i = 0; i < 30; i++) {
-
-        //   goodie = new Block('food', { tilesize: 50, energy: 40, sound: nomSound });
-
-        //   game.addGoodie(goodie);
-        // }
-
-        // player = new Player('Fiona', 'princess', { tilesize: 50, position: { x: 3, y: 2 } });
-        
-        // game.addPlayer(player);
-        
-        // game.addPlayer(new Player('Lara', 'bunny', { tilesize: 50, position: { x: 5, y: 5 } }));
       })();
     </script>
   </body>
