@@ -6,55 +6,35 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <section>
-      <ul>
-        <li>I love marshmallow chupa chups cheesecake I love.</li>
-        <li>I love candy canes. Jelly I love I love gingerbread dragée.</li>
-        <li>Bear claw tart marshmallow pastry.</li>
-      </ul>
-    </section>
     <script>
-      (function() {
-        var container, content, header;
-        
-        container = document.createElement('section');
-        container.classList.add('info');
-        document.body.appendChild(container);
-
-        content = document.createTextNode('Hi there!');
-
-        container.appendChild(content);
-
-        header = document.createElement('h2');
-        header.innerHTML = 'I am a header';
-
-        container.insertBefore(header, content);
-      });
 
       (function() {
-        var fragment,
-            list,
-            item,
-            content = [
+        var list;
+        var item;
+        var content = [
+              'Bear claw tart marshmallow pastry.',
+              'I love candy canes. Jelly I love I love gingerbread dragée.',
+              'I love marshmallow chupa chups cheesecake I love.',
               'Soufflé lollipop wypas donut tootsie roll caramels. Biscuit fruitcake I love.',
               'Cupcake icing oat cake sweet roll liquorice.',
               'Danish I love jelly macaroon jujubes powder.',
               'Faworki chocolate bar jelly lemon drops.',
               'Jelly chocolate bar tiramisu brownie.'
             ];
+        //list = document.querySelector('ul');
+        //var fragment;
+        //fragment = document.createDocumentFragment();
 
-        list = document.querySelector('ul');
+        list = document.createElement('ul');
 
-        fragment = document.createDocumentFragment();
-
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0, l = content.length; i < l; i++) {
           item = document.createElement('li');
-          item.innerText = content[i];
-          fragment.appendChild(item);
+          item.innerHTML = content[i];
+          list.appendChild(item);
         }
 
-        list.appendChild(fragment);
-      });
+        document.body.appendChild(list);
+      })();
     </script>
   </body>
 </html>

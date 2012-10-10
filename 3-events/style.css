@@ -14,7 +14,7 @@ li {
   position: relative;
 
   margin: 5px auto;
-  padding: 0;
+  padding: .5em;
   overflow: hidden;
 
   background: rgb(149,189,61);
@@ -25,25 +25,16 @@ li {
   font-size: 1em;
 
   text-align: center;
+
+  -webkit-transition-property: padding;
+  -webkit-transition-duration: 1s;
 }
 
-li h3 {
-  position: relative;
-  background: rgb(244,177,63);
-  margin: 0;
-  cursor: pointer;
+.slide {
+  padding: 2em;
+  background: rgb(255,169,72);
 }
 
-li div {
-  padding: 0 .5em;
-  overflow: hidden;
-}
-
-.transition div {
-  -webkit-transition: max-height .5s ease-in-out;
-  max-height: 0px;
-}
-
-.transition .slide div {
-  max-height: 400px;
+.new {
+  background: rgb(152,210,232);
 }

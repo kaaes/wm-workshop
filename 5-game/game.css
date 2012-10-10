@@ -57,6 +57,10 @@ li {
   transition-duration: .3s;
 }
 
+li.static {
+  -webkit-transition: none;
+}
+
 li::before {
   content: attr(data-health);
   display: block;

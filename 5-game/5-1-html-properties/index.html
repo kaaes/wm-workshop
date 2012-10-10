@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+ <html>
+  <head>
+    <title>Some people</title>
+    <meta charset="utf-8">
+    <link href="http://fonts.googleapis.com/css?family=Cousine&subset=latin" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../game.css">
+  </head>
+  <body>
+    <!-- 
+      Zadania:
+      - zmień wygląd bohatera (do dyspozycji ['monk', 'prince', 'princess', 'boy', 'tux', 'heidi', 'bunny', 'gandalf'])
+      - zmień kierunek w którym idzie (parametr data-direction, możliwe wartości right/left/up/down)
+      - zmień imię bohatera
+      - zmień pozycję bohatera na planszy
+      - przełącz aktywnego bohatera
+    -->
+    <div id="gameboard" style="background-size: 50px 50px; width: 751px; height: 501px; " class="active grid">
+      <ul id="players">
+        <li data-health="100" style="left: 700px; top: 0px;" class="prince active" data-direction="down">
+          <span>Charming</span>
+        </li>
+        <li data-health="100" class="monk" data-direction="right">
+          <span>Tuck</span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

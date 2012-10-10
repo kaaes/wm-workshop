@@ -17,25 +17,25 @@
       <ul id="players">
       </ul>
     </div>
-    <script src="game.js"></script>
+    <script src="game_final.js"></script>
     <script>
       (function() {
 
         var stepSound = document.querySelector('#step-sound');
         var nomSound = document.querySelector('#nom-sound');
 
-        var game, player, goodie;
+        var game;
         
-        game = new Game(document.querySelector('#gameboard'), { tilesize: 50 });
+        game = new Game(document.querySelector('#gameboard'), { tilesize: 50, goodieSound: nomSound });
         
         game.createBoard(15, 10);
 
-        game.addGoodies(20, { type: 'greens', energy: 40, sound: nomSound });
-        game.addGoodies(10, { type: 'tomatoes', energy: 60, sound: nomSound });
-        game.addGoodies(5, { type: 'fish', energy: 80, sound: nomSound });
+        game.addGoodies(20, { type: 'greens', energy: 40 });
+        game.addGoodies(10, { type: 'tomatoes', energy: 60 });
+        game.addGoodies(5, { type: 'fish', energy: 80 });
 
-        game.addPlayer('Fiona', 'prince');
-        game.addPlayer('John','monk');
+        game.addPlayer('Charming', 'prince');
+        game.addPlayer('Tuck','monk');
 
         game.setActivePlayer(0);
 
@@ -59,9 +59,7 @@
         }
 
         function movePlayer(ev) {
-          var move = false, x, y;
-
-          stepSound.play();
+          var move = true, x, y;
 
           setTimeout(function(){
             stepSound.pause();
@@ -102,7 +100,8 @@
           }
           
           if (move) {
-            game.movePlayer(x, y);
+            stepSound.play();
+            //game.movePlayer(x, y);
             
             ev.preventDefault();
           }

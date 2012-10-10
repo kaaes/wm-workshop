@@ -1,0 +1,51 @@
+ <!DOCTYPE html>
+ <html>
+  <head>
+    <title>Some people</title>
+    <meta charset="utf-8">
+    <link href="http://fonts.googleapis.com/css?family=Cousine&subset=latin" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../game.css">
+  </head>
+  <body>
+    <div id="gameboard">
+      <ul id="players">
+      </ul>
+    </div>
+    <!-- 
+      Zadania:
+      - Dodaj sterowanie aktywnym graczem za pomocą klawiatury (gora/dol/prawo/lewo)
+      - gracz powinien poruszać się za każdym razem tylko o jedno pole w danym kierunku
+
+      - dodaj nowych graczy
+      - dodaj przełączanie aktywnego gracza przez klikanie na postaciach (może przydać się delegacja)
+
+    -->
+    <script src="../game.js"></script>
+    <script>
+      var game = new Game(document.querySelector('#gameboard'), { tilesize: 50 });
+        
+      game.createBoard(15, 10);
+
+      game.addPlayer('Charming', 'prince');
+      game.addPlayer('Tuck','monk');
+
+      game.setActivePlayer(0);
+
+      document.body.addEventListener('keydown', movePlayer, false);
+      document.body.addEventListener('click', switchPlayer, false);
+
+      function switchPlayer(ev) {
+        /** ... **/
+      }
+
+      function movePlayer(ev) {
+        
+        /** ... **/
+
+        ev.preventDefault();
+      }
+
+
+    </script>
+  </body>
+</html>

@@ -77,8 +77,13 @@ Game.prototype.addGoodies = function(howMuch, options) {
       sound = options.sound || null;
 
   for (var i = 0; i < howMuch; i++) {
-    /** ... **/
-    // new Block(...)
+    position = this._getFreeRandomTile();
+
+    goodie = new Block('food', this.grid.tilesize, { position: position, type: type, energy: energy });
+
+    this.grid.tiles[position.x][position.y] = goodie;
+
+    this.gamebody.appendChild(goodie.element);
   }
 };
 
@@ -100,6 +105,7 @@ Game.prototype.addPlayer = function(name, type, position) {
   this.players.push(player);
 
   this.playersList.appendChild(player.element);
+  // this.grid.tiles[position.x][position.y] = player;
 
   this.activePlayer = player;
 };
@@ -163,11 +169,31 @@ Game.prototype.movePlayerTo = function(player, x, y) {
     var block = this.grid.tiles[x][y];
 
     if (block) {
-      /** ... **/
+
+      switch (block.name) {
+        case 'food':
+          player.health -= this.moveEnergy;
+
+          player.health += block.value;
+
+          player.move(x, y);
+
+          if (this.goodieSound) {
+            this.goodieSound.play();
+          }
+
+          this.grid.tiles[x][y] = false;
+
+          window.setTimeout(function() {
+            block.remove();
+          }, 300);
+          break;
+      }
+
+    } else {
+      player.health -= this.moveEnergy;
+      player.move(x, y);
     }
-
-    player.move(x, y);
-
   }
 };
 
@@ -175,28 +201,32 @@ Game.prototype.movePlayerTo = function(player, x, y) {
  * Moves the player one tile right
  */
 Game.prototype.moveRight = function() {
-  /** ... **/
+  this.activePlayer.element.dataset.direction = 'right';
+  this.moveActivePlayer(1, 0);
 };
 
 /**
  * Moves the player one tile left
  */
 Game.prototype.moveLeft = function() {
-  /** ... **/
+  this.activePlayer.element.dataset.direction = 'left';
+  this.moveActivePlayer(-1, 0);
 };
 
 /**
  * Moves the player one tile up
  */
 Game.prototype.moveUp = function() {
-  /** ... **/
+  this.activePlayer.element.dataset.direction = 'up';
+  this.moveActivePlayer(0, -1);
 };
 
 /**
  * Moves the player one tile down
  */
 Game.prototype.moveDown = function() {
-  /** ... **/
+  this.activePlayer.element.dataset.direction = 'down';
+  this.moveActivePlayer(0, 1);
 };
 
 /**
@@ -262,8 +292,6 @@ Player.prototype.createElement = function() {
 
   node.dataset.health = this.health;
   node.classList.add(this.type);
-  /** ... **/
-  node.classList.add('static');
   name.innerHTML = this.name;
   node.appendChild(name);
 
@@ -304,7 +332,6 @@ Player.prototype.update = function() {
  *  param {Number} options.type Block's type (defines css class to render right image)
  *  param {Number} options.energy This value will be added to players health when
  *                 he enters the field with the Block.
- *  param {Object} options.position Where the goodie should be placed.
  */
 function Block(name, tilesize, options) {
   if (!tilesize) {
@@ -331,9 +358,10 @@ function Block(name, tilesize, options) {
  * of the Block object
  */
 Block.prototype.createElement = function() {
-  // <div class="{this.name} {this.type}" data-value="{this.value}"></div>
-  var element = null;
-  /** ... **/
+  console.log('create goodie');
+  var element = document.createElement('div');
+  element.classList.add(this.name);
+  element.classList.add(this.type);
 
   this.element = element;
 
