@@ -263,7 +263,8 @@ Player.prototype.createElement = function() {
   node.dataset.health = this.health;
   node.classList.add(this.type);
   /** ... **/
-  node.classList.add('static');
+  // toggle animation of the moves
+  //node.classList.add('static');
   name.innerHTML = this.name;
   node.appendChild(name);
 

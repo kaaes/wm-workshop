@@ -17,16 +17,22 @@
       var list = document.querySelector('ul');
       var elements = list.querySelectorAll('li');
       
-      for (var i = 0, l = elements.length; i < l; i++) {
+      // without delegation - add events to every list item
+      /*for (var i = 0, l = elements.length; i < l; i++) {
         elements[i].addEventListener('click', toggleSlide);
-      }
+      }*/
 
-      // list.addEventListener('click', ...);
+      // with delegation - add event to parent element
+      list.addEventListener('click', function(evt) {
+        if (evt.target.nodeName === 'LI') {
+          toggleSlide(evt);
+        }
+      });
 
-      // addElements();
+      addElements();
 
       function toggleSlide(evt) {
-        this.classList.toggle('slide');
+        evt.target.classList.toggle('slide');
       }
 
       function addElements() {
@@ -53,10 +59,3 @@
     </script>
   </body>
 </html>
-<!--
-  Dodanie event listenera do elementu
-  addEventListener - jakie parametry, co oznaczają
-  wewnątrz callbacka - czym jest evt, co istotnego w nim siedzi
-  przykład clicka - parametry myszki
-  przykład z klawiatury - jaka litera została wpisana
--->

@@ -450,6 +450,11 @@ el.classList.toggle('expanded');
 if (el.classList.contains('active')) {
   loadSection(el);
 }</code></pre>
+          <pre><code class="javascript">el.dataset.price = 50;             // &lt;div data-price="50"&gt;...&lt;/div&gt;
+el.setAttribute('data-price', 50); // &lt;div data-price="50"&gt;...&lt;/div&gt;
+
+el.dataset.price;                  // 50
+el.getAttribute('data-price');     // 50</code></pre>
         </section>
 
         <section>
